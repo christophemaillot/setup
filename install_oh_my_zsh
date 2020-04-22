@@ -1,0 +1,6 @@
+#/bin/bash
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+mkdir -p ~/.oh-my-zsh/custom/plugins/chrm/
+ln -s ~/.setup/chrm.plugin.zsh ~/.oh-my-zsh/custom/plugins/chrm/chrm.plugin.zsh
