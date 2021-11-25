@@ -1,26 +1,9 @@
 
 
-chrm_prompt_datime() {
-    prompt_segment '67' '0' "$(date +"%H:%M:%S")"
-}
-
-
-chrm_rprompt_nvm() {
-  echo "${NVM_BIN[(ws:/:)-2]}"
-}
-
 autoload -U add-zsh-hook
-
-ssh-add -K  > /dev/null
-
-
-
-
 
 # python 3 as the default python executable
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
-
-
 
 ######################################################################
 #  juse : a handy function to switch current JDK version             #
@@ -47,7 +30,7 @@ function juse {
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 
 #export ANDROID_HOME="/opt/android-sdk/"
-#export PATH="$PATH:/opt/android-sdk/platform-tools/"
+export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools/"
 
 
 ######################################################################
@@ -63,10 +46,79 @@ export NVM_DIR="$HOME/.nvm"
 
 export HOMEBREW_EDITOR="code"
 export LANG="en_US.UTF-8"
-ssh-add -K  > /dev/null
+export PATH=$PATH:$HOME/Local/bin
+ssh-add -K  2>/dev/null > /dev/null
 
 ######################################################################
-#   power level 9k                                                   #
+#   mysql client                                                     #
 ######################################################################
 
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+
+######################################################################
+#   install z                                                        #
+######################################################################
+
+. /usr/local/etc/profile.d/z.sh
+
+######################################################################
+#   starship                                                         #
+######################################################################
+
+eval "$(starship init zsh)"
+
+######################################################################
+#   exa                                                              #
+######################################################################
+
+alias ls=exa
+alias cat=bat
+
+######################################################################
+#   ant                                                              #
+######################################################################
+
+export ANT_VERSION=1.10.8
+export ANT_HOME=/opt/apache-ant-${ANT_VERSION}/
+export PATH=$PATH:$ANT_HOME/bin
+
+######################################################################
+#   composer                                                         #
+######################################################################
+
+export PATH=$PATH:$HOME/.composer/vendor/bin
+
+
+######################################################################
+#   work settings                                                    #
+######################################################################
+
+export SALAMANDRE_CACHE=~/Cache/SALAMANDRE_CACHE
+export SALAMANDRE_LOCAL_LIBS=~/Cache/SALAMANDRE_LOCAL_LIBS
+
+export PATH=$PATH:/Users/eddy/Projects/kilab/prodtools/globule-cli
+
+######################################################################
+#   phpbrew                                                          #
+######################################################################
+
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+if [ -e /usr/local/opt/php/ ] ;
+then
+  PATH=/usr/local/opt/php/bin:$PATH
+fi
+
+######################################################################
+#   misc conf                                                        #
+######################################################################
+
+alias t="open -a iTerm ."
+
+######################################################################
+#   deno                                                             #
+######################################################################
+
+export PATH=$PATH:/Users/eddy/.deno/bin
+
+
