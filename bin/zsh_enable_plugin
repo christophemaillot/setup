@@ -1,0 +1,9 @@
+#!/bin/bash
+
+PLUGIN_TO_ADD=$1
+
+PLUGINS_LIST=$(cat ~/.zshrc | egrep ^plugins= | sed -e "s/.*(//g" -e "s/).*//g")
+
+NEW_LIST=$(echo "$PLUGINS_LIST $PLUGIN_TO_ADD" | xargs -n1 | sort -u | xargs)
+
+sed -i ".bak" "s/^plugins=.*/plugins=($NEW_LIST)/g" ~/.zshrc

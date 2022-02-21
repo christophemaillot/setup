@@ -1,0 +1,15 @@
+#!/bin/bash
+
+brew install wget
+brew install curl
+brew install exa
+brew install bat
+brew install ack
+brew install mas
+
+brew install pnpm
+brew install jq
+brew install php@8.0
+brew install go
+brew install bash
+

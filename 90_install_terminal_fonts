@@ -1,0 +1,23 @@
+#/bin/bash
+
+
+## install fonts
+echo "Downloading fonts :"
+echo "    - MesloLGS NF Regular"
+curl -fsSL https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf > /tmp/MesloLGS\ NF\ Regular.ttf
+echo "    - MesloLGS NF Bold"
+curl -fsSL https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf > /tmp/MesloLGS\ NF\ Bold.ttf
+echo "    - MesloLGS NF Italic"
+curl -fsSL https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf > /tmp/MesloLGS\ NF\ Italic.ttf
+echo "    - MesloLGS NF Bold Italic"
+curl -fsSL https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf > /tmp/MesloLGS\ NF\ Bold\ Italic.ttf
+echo "Moving fonts to font folder"
+sudo mv /tmp/MesloLGS\ NF\ Regular.ttf /Library/Fonts/
+sudo mv /tmp/MesloLGS\ NF\ Bold.ttf /Library/Fonts/
+sudo mv /tmp/MesloLGS\ NF\ Italic.ttf /Library/Fonts/
+sudo mv /tmp/MesloLGS\ NF\ Bold\ Italic.ttf /Library/Fonts/
+echo "Fonts installation done."
+
+
+
+

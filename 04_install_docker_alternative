@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#brew install podman
+#brew install docker-compose
+#podman machine init
+#podman machine start
+#ln -s /usr/local/bin/podman /usr/local/bin/docker
+#pip3 install podman-compose
+
+#brew install docker docker-compose
+#brew install docker-machine
+#brew services restart docker-machine
+
+brew install --cask docker

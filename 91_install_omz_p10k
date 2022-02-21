@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ "${LC_TERMINAL}" != 'iTerm2' ] ;
+then
+    echo "Better run this script from iTerm2. Exiting"
+    exit 0
+fi
+
+## oh my zsh
+#echo "Installing zsh"
+#curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
+
+## power 10k
+#echo "Installing p10k"
+#it clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+## enable p10K
+#echo "Enabling p10k"
+#ln -s ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme ~/.oh-my-zsh/themes
+#sed -i '.back'  's/ZSH_THEME=.*/ZSH_THEME=powerlevel10k/' ~/.zshrc
+
+# zsh autocompletion
+#git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+#~/.setup/bin/zsh_enable_plugin zsh-autosuggestions
+
+
